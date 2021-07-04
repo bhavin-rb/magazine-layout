@@ -1,0 +1,155 @@
+
+/*MAGAZINE LAYOUT*/
+
+:root {
+	--ff-body: 'Heebo', sans-serif;
+	--ff-heading:  'Oswald', sans-serif;
+
+	--clr-primary-400:  hsl(60 100% 50%);
+	--clr-neutral-900:  hsl(0 0% 0%);
+	--clr-neutral-100:  hsl(0 0% 100%);
+
+	--fs-xl:  clamp(3rem, 1rem + 10vw, 7rem);
+	--fs-600:  2rem;
+	--fs-500:  1.5rem;
+	--fs-400:  1.125rem;
+
+}
+
+*,
+*::befoe,
+*::after {
+	-webkit-box-sizing:  border-box;
+	        box-sizing:  border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+blockquote {
+	margin:  0;
+	padding: 0;
+}
+
+img {
+	display:  block;
+	max-width:  100%;
+
+}
+
+.flow > * + * {
+	margin-top:  var(--flow-spacer, 1rem);
+}
+
+body {
+	font-family: var(--ff-body);
+	font-size: var(--fs-400);
+	line-height: 1.6;
+}
+
+h1, 
+blockquote {
+	font-family:  var(--ff-heading);
+	font-weigth:  900;
+}
+
+h1 {
+	font-size:  var(--fs-xl);
+	text-transform:  uppercase;
+	line-height: 1;
+	
+}
+
+blockquote {
+	font-size:  var(--fs-600);
+	line-height:  1.2;
+	text-align:  center;
+	margin-bottom: 1em;
+}
+
+blockquote::before {
+	content:  open-quote;
+}
+
+blockquote::after {
+	content:  close-quote;
+}
+
+article {
+	display:  -ms-grid;
+	display:  grid;
+}
+article > *:not(img) {
+	padding:  0 2rem;
+}
+
+.lead {
+	font-size:  var(--fs-500);
+	max-width:  40ch;
+}
+
+.article-body {
+	-webkit-columns:  2 30ch;
+	   -moz-columns:  2 30ch;
+	        columns:  2 30ch;
+	-webkit-column-rule:  2px solid orange;
+	   -moz-column-rule:  2px solid orange;
+	        column-rule:  2px solid orange;
+	gap:  4rem;
+	max-width:  100ch;
+}
+
+.article-body > p:first-child::first-letter {
+	font-size:  3em;
+	float: left;
+	line-height:  0.65;
+	margin: 0.2em 0.1em 0.2em 0;
+	
+}
+
+.article-body > p:first-child::first-line {
+	font-weight: 523;
+} 
+
+
+.article-logo img {
+	
+	display: none;
+}
+
+@media (min-width:  50em) {
+	article {
+		-ms-grid-columns:  min(40%, 40rem) 1fr;
+		grid-template-columns:  min(40%, 40rem) 1fr;
+	}
+
+	article > img {
+		-ms-grid-row:  1;
+		-ms-grid-row-span:  4;
+		grid-row:  1 / 5;
+		height:  100%;
+		-o-object-fit:  cover;
+		   object-fit:  cover;
+	}
+
+	article > *:not(img) {
+		grid-column:  2 / -1;
+	}
+
+	
+	
+	.article-logo  img{
+		display:  block;
+		width: 100%;
+		max-height: 40%;
+		margin-bottom: 0;
+		margin-top: 0;
+		padding-top:  0;
+	}
+
+	.article-logo {
+		margin:  0;
+	}
+}
