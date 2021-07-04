@@ -123,7 +123,7 @@ article > *:not(img) {
 	article > img {
 		-ms-grid-row:  1;
 		-ms-grid-row-span:  4;
-		grid-row:  1 / 5;
+		grid-row:  1 / 4;
 		height:  100%;
 		-o-object-fit:  cover;
 		   object-fit:  cover;
